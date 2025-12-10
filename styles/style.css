@@ -40,13 +40,7 @@ h1, h2, h3 { font-family: var(--font-title); }
 .header-image {
     background: url('/img/EmmaYReyes-principal2.jpeg') no-repeat;
     background-size: cover;
-    
-    /* --- CORRECCIÓN PORTADA --- */
-    /* center center = mitad. 
-       center 20% = enfoca más arriba.
-       center 80% = enfoca más abajo. */
     background-position: center center; 
-    
     height: 65vh; 
     position: relative;
     display: flex;
@@ -81,7 +75,7 @@ h1, h2, h3 { font-family: var(--font-title); }
     margin-top: 10px;
 }
 
-/* 2. LA ONDA SVG */
+/* 2. LA ONDA SVG DE PORTADA */
 .header-wave {
     position: absolute;
     bottom: -1px;
@@ -165,7 +159,7 @@ h1, h2, h3 { font-family: var(--font-title); }
 }
 
 /* ======================================================= */
-/* ONDAS SEPARADORAS                                       */
+/* ONDAS SEPARADORAS (VERSION ESCRITORIO)                  */
 /* ======================================================= */
 
 .wave-container {
@@ -174,7 +168,7 @@ h1, h2, h3 { font-family: var(--font-title); }
     height: 100px;
     background-color: transparent;
     z-index: 20; 
-    margin-bottom: -99px;
+    margin-bottom: -99px; /* Muerde hacia abajo */
     pointer-events: none;
 }
 
@@ -184,7 +178,7 @@ h1, h2, h3 { font-family: var(--font-title); }
     height: 100px;
     background-color: transparent;
     z-index: 20;
-    margin-top: -99px;
+    margin-top: -99px; /* Muerde hacia arriba */
     pointer-events: none;
 }
 
@@ -260,10 +254,10 @@ h2 {
   background-attachment: fixed;
   color: white;
   z-index: 1; 
-  /* Por defecto centrado, pero lo corregimos abajo en cada ID */
   background-position: center center;
 }
 
+/* FIX PARALLAX EN MOVIL */
 @media (max-width: 768px) {
     .with-background { background-attachment: scroll; }
 }
@@ -279,24 +273,21 @@ h2 {
 .with-background p { color: #f0f0f0; }
 
 /* ======================================= */
-/* IMÁGENES POR SECCIÓN (CORREGIDAS)       */
+/* IMÁGENES POR SECCIÓN                    */
 /* ======================================= */
 
 #nosotros {
     background-image: url('/img/EmmaReyes-2-2.jpeg');
-    /* CORRECCIÓN: Alineado ARRIBA para que no corte cabezas */
     background-position: center top; 
 }
 
 #regalos {
-    background-image: url('/img/EmmaReyes-3.jpeg');
-    /* CORRECCIÓN: Alineado ARRIBA para que no corte cabezas */
+    background-image: url('/img/EmmaReyes-3-3.jpeg');
     background-position: center top;
 }
 
 #asistencia {
-    background-image: url('/img/EmmaReyes-4.jpeg');
-    /* Puedes probar center top o center center */
+    background-image: url('/img/EmmaReyes-4-4.jpeg');
     background-position: center center;
 }
 
@@ -318,7 +309,7 @@ h2 {
 
 .event-item {
     background: rgba(255,255,255,0.1);
-    backdrop-filter: blur(5px);
+    
     padding: 20px;
     border-radius: 10px;
     border: 1px solid rgba(255,255,255,0.2);
@@ -398,15 +389,40 @@ footer {
     box-shadow: 0 4px 10px rgba(0,0,0,0.3);
 }
 
-/* RESPONSIVE */
+/* ================================================================= */
+/* RESPONSIVE (MÓVIL) - CORREGIDO PARA QUE LAS OLAS NO SE PISEN    */
+/* ================================================================= */
+
 @media (max-width: 768px) {
+    /* Ajustes Generales de Texto */
     .header-content h1 { font-size: 3.5rem; }
     .header-image { height: 55vh; }
     .countdown-item { width: 70px; height: 70px; }
     .countdown-value { font-size: 1.5rem; }
     h2 { font-size: 2.8rem; }
-    /* Ajuste de onda en móvil */
-    .header-wave { height: 60px; }
-    .wave-container, .wave-container-up { height: 60px; margin-bottom: -59px; margin-top: -59px; }
     section { padding: 80px 20px 60px; }
+
+    /* --- AJUSTE DE OLAS EN MÓVIL --- */
+    
+    /* 1. Ola Portada */
+    .header-wave { 
+        height: 70px; 
+    }
+
+    /* 2. Olas separadoras: Ajustamos altura */
+    .wave-container, .wave-container-up { 
+        height: 70px; 
+    }
+
+    /* 3. Ola que baja (Muerde abajo) */
+    .wave-container { 
+        margin-bottom: -69px; 
+        margin-top: 0; /* Reseteamos para que no suba */
+    }
+
+    /* 4. Ola que sube (Muerde arriba) */
+    .wave-container-up { 
+        margin-top: -69px; 
+        margin-bottom: 0; /* Reseteamos para que no baje */
+    }
 }
