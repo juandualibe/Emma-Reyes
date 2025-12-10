@@ -38,7 +38,7 @@ h1, h2, h3 { font-family: var(--font-title); }
 
 /* 1. PARTE DE LA FOTO (Arriba) */
 .header-image {
-    background: url('/img/EmmaYReyes-principal2.jpeg') no-repeat;
+    background: url('/img/EmmaYReyes-principal3.jpeg') no-repeat;
     background-size: cover;
     background-position: center center; 
     height: 65vh; 
