@@ -337,15 +337,16 @@ h2 {
 
 /* Regalos */
 .gift-box {
-    background: rgba(255,255,255,0.95);
+    background: rgba(255,255,255,00.15);
     color: #333;
     padding: 30px;
     border-radius: 10px;
     display: inline-block;
     margin-top: 20px;
     box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    
 }
-.gift-box p { color: #333; margin: 10px 0; font-size: 1.1rem; }
+.gift-box p { color: #ffffff; margin: 10px 0; font-size: 1.1rem; }
 .gift-box i { color: var(--terracotta); margin-right: 10px; }
 
 /* Asistencia */
