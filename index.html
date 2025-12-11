@@ -222,6 +222,20 @@
           });
       }
 
+      /* --- LOGICA PARA LA FLECHA QUE BAJA --- */
+      const scrollArrow = document.querySelector('.scroll-indicator');
+      
+      if(scrollArrow) {
+        scrollArrow.addEventListener('click', () => {
+          // Buscamos la sección "nosotros"
+          const nextSection = document.getElementById('nosotros');
+          if(nextSection) {
+            // Hacemos scroll suave hasta esa sección
+            nextSection.scrollIntoView({ behavior: 'smooth' });
+          }
+        });
+      }
+
       const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
           if (entry.isIntersecting) {

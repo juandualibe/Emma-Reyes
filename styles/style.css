@@ -150,6 +150,7 @@ h1, h2, h3 { font-family: var(--font-title); }
     font-size: 2rem;
     color: var(--terracotta);
     animation: bounce 2s infinite;
+    cursor: pointer;
 }
 
 @keyframes bounce {
